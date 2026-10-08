@@ -4,7 +4,7 @@ import json
 import os
 from PIL import Image, ImageDraw
 
-BASE = "/Users/alexander/bouquet-layout/selftest"
+BASE = os.path.join(os.getcwd(), "selftest")
 os.makedirs(BASE, exist_ok=True)
 
 colors = ["#8e2f4e", "#c65b74", "#e9a1ad", "#f3e7c9", "#7fa05a",

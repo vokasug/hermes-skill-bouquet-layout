@@ -7,6 +7,7 @@
 import argparse
 import json
 import math
+import os
 from PIL import Image, ImageDraw, ImageFont
 
 W = H = 2048
@@ -15,7 +16,8 @@ CREAM = (250, 245, 233)    # фирменный кремовый #FAF5E9
 TEAL = (94, 176, 172)      # осветлённый фирменный teal #095E5D для читаемости на тёмном
 MUTED = (168, 178, 172)    # приглушённый серо-зелёный для подписей
 
-FONT_DIR = "/Users/alexander/bouquet-layout/fonts"
+FONT_DIR = os.environ.get("BOUQUET_FONTS") or os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "fonts")
 
 
 def font(size, weight=500, italic=False):
